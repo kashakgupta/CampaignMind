@@ -1,0 +1,151 @@
+{
+    "project": "Marketing Campaign Effectiveness Prediction",
+    "baseline_comparison": {
+        "random_forest": {
+            "model_name": "Random Forest",
+            "accuracy": 0.8780272033617162,
+            "precision": 0.478176527643065,
+            "recall": 0.4659735349716446,
+            "f1_score": 0.4719961704164672,
+            "roc_auc": 0.8002503512611667,
+            "training_time": 10.205104112625122,
+            "confusion_matrix": [
+                [
+                    7447,
+                    538
+                ],
+                [
+                    565,
+                    493
+                ]
+            ],
+            "classification_report": {
+                "0": {
+                    "precision": 0.9294807788317524,
+                    "recall": 0.9326236693800877,
+                    "f1-score": 0.9310495717947115,
+                    "support": 7985.0
+                },
+                "1": {
+                    "precision": 0.478176527643065,
+                    "recall": 0.4659735349716446,
+                    "f1-score": 0.4719961704164672,
+                    "support": 1058.0
+                },
+                "accuracy": 0.8780272033617162,
+                "macro avg": {
+                    "precision": 0.7038286532374087,
+                    "recall": 0.6992986021758661,
+                    "f1-score": 0.7015228711055893,
+                    "support": 9043.0
+                },
+                "weighted avg": {
+                    "precision": 0.8766797285433934,
+                    "recall": 0.8780272033617162,
+                    "f1-score": 0.8773418974987719,
+                    "support": 9043.0
+                }
+            },
+            "model_parameters": {
+                "n_estimators": 200,
+                "max_depth": 20,
+                "min_samples_split": 5,
+                "min_samples_leaf": 2,
+                "class_weight": {
+                    "0": 0.5662397845758838,
+                    "1": 4.27416686362562
+                },
+                "random_state": 42
+            }
+        },
+        "ann": {
+            "model_name": "Artificial Neural Network",
+            "accuracy": 0.8256109698109034,
+            "precision": 0.35478455512031337,
+            "recall": 0.5992438563327032,
+            "f1_score": 0.4456942003514939,
+            "roc_auc": 0.7914339031241233,
+            "training_time_seconds": 53.421393394470215,
+            "epochs_completed": 19,
+            "best_validation_loss": 0.47535157203674316,
+            "best_validation_accuracy": 0.8290019631385803,
+            "confusion_matrix": [
+                [
+                    6832,
+                    1153
+                ],
+                [
+                    424,
+                    634
+                ]
+            ],
+            "classification_report": {
+                "No Subscription": {
+                    "precision": 0.9415656008820287,
+                    "recall": 0.8556042579837195,
+                    "f1-score": 0.8965290991404763,
+                    "support": 7985.0
+                },
+                "Yes Subscription": {
+                    "precision": 0.35478455512031337,
+                    "recall": 0.5992438563327032,
+                    "f1-score": 0.4456942003514939,
+                    "support": 1058.0
+                },
+                "accuracy": 0.8256109698109034,
+                "macro avg": {
+                    "precision": 0.648175078001171,
+                    "recall": 0.7274240571582113,
+                    "f1-score": 0.671111649745985,
+                    "support": 9043.0
+                },
+                "weighted avg": {
+                    "precision": 0.8729142300520061,
+                    "recall": 0.8256109698109034,
+                    "f1-score": 0.8437829614739117,
+                    "support": 9043.0
+                }
+            },
+            "architecture": [
+                "Input Layer: 50 features",
+                "Dense Layer: 64 neurons, ReLU",
+                "Dropout: 0.3",
+                "Dense Layer: 32 neurons, ReLU",
+                "Dropout: 0.2",
+                "Output Layer: 1 neuron, Sigmoid"
+            ],
+            "hyperparameters": {
+                "optimizer": "Adam",
+                "learning_rate": 0.001,
+                "loss": "Binary Crossentropy",
+                "batch_size": 32,
+                "maximum_epochs": 100,
+                "early_stopping_patience": 10,
+                "threshold": 0.5
+            }
+        }
+    },
+    "ann_threshold_tuning": {
+        "original_threshold": 0.5,
+        "tuned_threshold": 0.55,
+        "validation_best_f1": 0.4855604503181596,
+        "test_results": {
+            "accuracy": 0.8534778281543736,
+            "precision": 0.40683879972086534,
+            "recall": 0.5510396975425331,
+            "f1_score": 0.46808510638297873,
+            "roc_auc": 0.7914339031241233
+        }
+    },
+    "observations": [
+        "Random Forest achieved higher baseline accuracy.",
+        "Random Forest achieved higher baseline precision.",
+        "ANN achieved higher baseline recall.",
+        "Random Forest achieved higher baseline F1-score.",
+        "Random Forest achieved higher baseline ROC-AUC.",
+        "ANN threshold tuning improved its test precision and F1-score.",
+        "ANN retained higher recall than Random Forest after tuning."
+    ],
+    "selected_model": "Random Forest",
+    "selection_reason": "Random Forest was selected because it achieved the highest accuracy, precision, F1-score and ROC-AUC among the evaluated configurations. It also required less training time. ANN remains a useful alternative when identifying more potential subscribers is the primary business priority."
+}

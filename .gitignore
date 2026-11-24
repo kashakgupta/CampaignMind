@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+.venv/
+venv/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Large intermediate files
+models/processed_data.pkl
+
+# Backup files
+app_backup_before_login.py
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Exclude duplicate compressed datasets
+dataset/*.zip

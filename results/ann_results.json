@@ -1,0 +1,66 @@
+{
+    "model_name": "Artificial Neural Network",
+    "accuracy": 0.8256109698109034,
+    "precision": 0.35478455512031337,
+    "recall": 0.5992438563327032,
+    "f1_score": 0.4456942003514939,
+    "roc_auc": 0.7914339031241233,
+    "training_time_seconds": 53.421393394470215,
+    "epochs_completed": 19,
+    "best_validation_loss": 0.47535157203674316,
+    "best_validation_accuracy": 0.8290019631385803,
+    "confusion_matrix": [
+        [
+            6832,
+            1153
+        ],
+        [
+            424,
+            634
+        ]
+    ],
+    "classification_report": {
+        "No Subscription": {
+            "precision": 0.9415656008820287,
+            "recall": 0.8556042579837195,
+            "f1-score": 0.8965290991404763,
+            "support": 7985.0
+        },
+        "Yes Subscription": {
+            "precision": 0.35478455512031337,
+            "recall": 0.5992438563327032,
+            "f1-score": 0.4456942003514939,
+            "support": 1058.0
+        },
+        "accuracy": 0.8256109698109034,
+        "macro avg": {
+            "precision": 0.648175078001171,
+            "recall": 0.7274240571582113,
+            "f1-score": 0.671111649745985,
+            "support": 9043.0
+        },
+        "weighted avg": {
+            "precision": 0.8729142300520061,
+            "recall": 0.8256109698109034,
+            "f1-score": 0.8437829614739117,
+            "support": 9043.0
+        }
+    },
+    "architecture": [
+        "Input Layer: 50 features",
+        "Dense Layer: 64 neurons, ReLU",
+        "Dropout: 0.3",
+        "Dense Layer: 32 neurons, ReLU",
+        "Dropout: 0.2",
+        "Output Layer: 1 neuron, Sigmoid"
+    ],
+    "hyperparameters": {
+        "optimizer": "Adam",
+        "learning_rate": 0.001,
+        "loss": "Binary Crossentropy",
+        "batch_size": 32,
+        "maximum_epochs": 100,
+        "early_stopping_patience": 10,
+        "threshold": 0.5
+    }
+}
